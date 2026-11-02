@@ -8,6 +8,7 @@ params = {"latitude": 40.72,
           "timezone": "America/New_York"}
 response = requests.get(
     "https://archive-api.open-meteo.com/v1/archive", params=params)
+response.raise_for_status()
 print(response.status_code)
 data = response.json()
 hourly = data["hourly"]
