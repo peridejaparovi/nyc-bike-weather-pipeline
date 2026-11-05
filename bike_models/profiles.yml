@@ -1,0 +1,7 @@
+bike_models:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/bike.duckdb
+      threads: 2

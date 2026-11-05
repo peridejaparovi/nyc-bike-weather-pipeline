@@ -1,0 +1,6 @@
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: rides
+      - name: weather
