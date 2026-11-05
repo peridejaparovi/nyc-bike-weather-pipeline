@@ -5,9 +5,9 @@ import requests
 
 params = {"latitude": 40.72,
           "longitude": -74.04,
-          "start_date": "2026-09-01",
-          "end_date": "2026-09-02",
-          "hourly": "temperature_2m",
+          "start_date": "2026-08-31",
+          "end_date": "2026-09-30",
+          "hourly": "temperature_2m,precipitation,snowfall,wind_speed_10m",
           "timezone": "America/New_York"}
 response = requests.get(
     "https://archive-api.open-meteo.com/v1/archive", params=params)
