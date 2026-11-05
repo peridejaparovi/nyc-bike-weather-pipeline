@@ -2,3 +2,4 @@
 data/
 *.duckdb
 .DS_Store
+logs/
