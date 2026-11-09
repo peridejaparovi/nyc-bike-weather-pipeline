@@ -13,9 +13,9 @@ models:
           - not_null:
               config:
                 severity: warn
-      - name: rider_type 
+      - name: rider_type
         data_tests:
-         - accepted_values:
+        - accepted_values:
               arguments:
                 values: ['member', 'casual']
   - name: stg_weather
