@@ -1,0 +1,21 @@
+models:
+  - name: dim_stations
+    columns:
+      - name: station_id
+        data_tests:
+          - unique
+          - not_null
+  - name: fct_rides
+    columns:
+      - name: start_station_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_stations')
+                field: station_id
+      - name: end_station_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_stations')
+                field: station_id  
