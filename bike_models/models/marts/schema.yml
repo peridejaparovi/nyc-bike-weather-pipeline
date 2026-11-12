@@ -18,4 +18,4 @@ models:
           - relationships:
               arguments:
                 to: ref('dim_stations')
-                field: station_id  
+                field: station_id
