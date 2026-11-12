@@ -1,7 +1,7 @@
 WITH rides_per_hour AS (
     SELECT date_trunc('hour', rides.started_at) AS ride_hour,
            COUNT(rides.ride_id) AS total_rides
-    FROM {{ ref('stg_rides') }} AS rides
+    FROM {{ ref('fct_rides') }} AS rides
     GROUP BY 1
 )
 
