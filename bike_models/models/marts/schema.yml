@@ -1,11 +1,13 @@
 models:
   - name: dim_stations
+    description: One row per station, with station name and location.
     columns:
       - name: station_id
         data_tests:
           - unique
           - not_null
   - name: fct_rides
+    description: One row per ride, with start and end station information.
     columns:
       - name: start_station_id
         data_tests:
@@ -19,3 +21,17 @@ models:
               arguments:
                 to: ref('dim_stations')
                 field: station_id
+  - name: fct_hourly_ridership
+    description: One row per hour in September 2026, with ride count and weather.
+    columns:
+      - name: weather_hour
+        description: Start of the hour, New York time.
+        data_tests:
+          - unique
+          - not_null
+      - name: rides
+        description: Rides that started in this hour. 0 if none.
+        data_tests:
+          - not_null
+  - name: rpt_rain_effect
+    description: One row summarizing all rainy hours, comparing actual rides with the rides expected from dry hours at the same hour and type of day.
